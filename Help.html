@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Confirmation Example</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0b1024;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        form {
+            background: #1a1a1a;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: none;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        #confirmBox {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+        #confirmContent {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 280px;
+        }
+        #confirmContent button {
+            margin-top: 15px;
+            min-width: 70px;
+        }
+        #sentMessage {
+            font-size: 2rem;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form id="myForm">
+            <input type="text" placeholder="Decrivez votre probleme.." required /><br />
+            <button type="submit">Envoyer</button>
+            <button type="reset">Annuler</button>
+        </form>
+
+        <div id="sentMessage">Envoyer</div>
+    </div>
+    <div id="confirmBox">
+        <div id="confirmContent">
+            <p>êtes vous sûr(e) de vouloir envoyer ?</p>
+            <button id="yesBtn">Oui</button>
+            <button id="noBtn">Non</button>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById("myForm");
+        const confirmBox = document.getElementById("confirmBox");
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const container = document.getElementById("container");
+        const sentMessage = document.getElementById("sentMessage");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            confirmBox.style.display = "flex";
+        });
+        yesBtn.addEventListener("click", function() {
+            confirmBox.style.display = "none";
+            form.style.display = "none";
+            sentMessage.style.display = "block";
+        });
+        noBtn.addEventListener("click", function() {
+            confirmBox.style.display = "none";
+        });
+    </script>
+</body>
+</html>
