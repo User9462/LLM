@@ -1,10 +1,13 @@
-const page = "a";
-const list = [page];
+document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // stops POST request
 
-function checkValue(userResearch) {
-    if (list.includes(userResearch)) {
-        return "Value found in array: " + userResearch;
+    const userInput = document.getElementById("inputSearch").value;
+
+    const list = ["a"];
+
+    if (list.includes(userInput)) {
+        alert("Value found: " + userInput);
     } else {
-        return "Value NOT found in array";
+        alert("Value NOT found");
     }
-}
+});
