@@ -1,21 +1,24 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form action="Research.js" method="post">
-        <center>
-            <img src="llmlogo.jpg" alt="HomePageLogo" width="600" height="350">  
-            <br>
-            <br>
-            <input name="InputSearch" type="text" placeholder="Search.."> <br> <br>
-
+    <center>
+        <img src="llmlogo.jpg" width="600" height="350">
+        <br><br>
+        <form id="searchForm">
+            <input id="inputSearch" type="text" placeholder="Search..">
+            <br><br>
             <button type="submit">Envoyer</button>
             <button type="reset">Annuler</button>
-        </center>
-    </form>
+            <br><br>
+            <button type="button" onclick="window.location.href='help.html'">
+                Need Help ?
+            </button>
+        </form>
+    </center>
+    <script src="Research.js"></script>
 </body>
 </html>
