@@ -1,5 +1,5 @@
 document.getElementById("searchForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // stops POST request
+    e.preventDefault();
 
     const userInput = document.getElementById("inputSearch").value;
 
